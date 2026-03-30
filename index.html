@@ -7,10 +7,7 @@ body{ font--family: Arial; Font Size: 30px; background-color: lightblue; }
 
 h2{ font-family: Times; Font-size: 25px; }
 
-
-
-</style>
-.container {
+container {
         background-color: white;
         width: 400px;
         margin: auto;
@@ -18,10 +15,15 @@ h2{ font-family: Times; Font-size: 25px; }
         border: 2px solid black;
     }
 
+</style>
+
+
+
 
 </head>
 
 <body>
+<div class="container"></div>
 
 <h2>Matchmaker</h2>
 
@@ -30,16 +32,16 @@ h2{ font-family: Times; Font-size: 25px; }
 <p>1. Best Rocky movies in order: 2, 1, 4, 3, 5.</p>
 <input id="q1"><br>
 
-<p>2. </p>
+<p>2. Do you eat your steak rare?</p>
 <input id="q2"><br>
 
-<p>3. I like new things</p>
+<p>3. Do you enjoy hiking and being outdoors?</p>
 <input id="q3"><br>
 
-<p>4. I like alone time</p>
+<p>4. Is Tobey Maguire the best Spider-Man?</p>
 <input id="q4"><br>
 
-<p>5. I like going out</p>
+<p>5. Are aliens real?</p>
 <input id="q5"><br><br>
 
 <button onclick="calc()">Check</button>
@@ -122,9 +124,9 @@ h2{ font-family: Times; Font-size: 25px; }
         if (score >= 80) {
             text += "True love";
         } else if (score >= 50) {
-            text += "Maybe friends";
+            text += "Big Dawgz";
         } else {
-            text += "Run away";
+            text += "Sorry";
         }
 
         document.getElementById("result").innerHTML = text;
