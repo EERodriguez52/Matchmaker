@@ -54,16 +54,16 @@ button {
 <p>1. Best Rocky movies in order: 2, 1, 4, 3, 5.</p>
 <input id="q1"><br>
 
-<p>2. Do you eat your steak rare?</p>
+<p>2. Steak should be eaten rare.</p>
 <input id="q2"><br>
 
 <p>3. Do you enjoy hiking and being outdoors?</p>
 <input id="q3"><br>
 
-<p>4. Is Tobey Maguire the best Spider-Man?</p>
+<p>4. Tobey Maguire is the best Spider-Man.</p>
 <input id="q4"><br>
 
-<p>5. Are aliens real?</p>
+<p>5. Aliens are real.</p>
 <input id="q5"><br><br>
 
 <button onclick="calc()">Check</button>
@@ -134,7 +134,7 @@ button {
 
         let total = d1 + d2 + d3 + d4 + d5;
 
-        let score = 100 - (total * 5);
+        let score = ((20-total) / 20) * 100;
 
         let text = "";
         text += "Q1 diff: " + d1 + "<br>";
@@ -145,7 +145,7 @@ button {
 
         text += "Score: " + score + "%<br>";
 
-        if (score >= 80) {
+        if (score >= 100) {
             text += "True love";
         } else if (score >= 50) {
             text += "Big Dawgz";
