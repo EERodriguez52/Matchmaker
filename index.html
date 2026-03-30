@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matchmaker</title>
+</head>
 
+<body>
+
+<h2>Matchmaker</h2>
+
+<p>Answer each question from 1 (disagree) to 5 (agree)</p>
+
+<p>1. I like being active</p>
+<input id="q1"><br>
+
+<p>2. Communication matters</p>
+<input id="q2"><br>
+
+<p>3. I like new things</p>
+<input id="q3"><br>
+
+<p>4. I like alone time</p>
+<input id="q4"><br>
+
+<p>5. I like going out</p>
+<input id="q5"><br><br>
+
+<button onclick="calc()">Check</button>
+
+<p id="error" style="color:red;"></p>
+<p id="result"></p>
+
+<script>
+    const desired1 = 5;
+    const desired2 = 5;
+    const desired3 = 4;
+    const desired4 = 3;
+    const desired5 = 4;
+
+    function validate(v) {
+        if (v == "" || isNaN(v)) return "Enter a number";
+        if (v < 1 || v > 5) return "Use 1-5";
+        return "";
+    }
+
+    function calc() {
+
+        document.getElementById("error").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+
+        let v1 = document.getElementById("q1").value;
+        let e1 = validate(v1);
+        if (e1 != "") {
+            document.getElementById("error").innerHTML = "Q1: " + e1;
+            return;
+        }
+
+        let v2 = document.getElementById("q2").value;
+        let e2 = validate(v2);
+        if (e2 != "") {
+            document.getElementById("error").innerHTML = "Q2: " + e2;
+            return;
+        }
+
+        let v3 = document.getElementById("q3").value;
+        let e3 = validate(v3);
+        if (e3 != "") {
+            document.getElementById("error").innerHTML = "Q3: " + e3;
+            return;
+        }
+
+        let v4 = document.getElementById("q4").value;
+        let e4 = validate(v4);
+        if (e4 != "") {
+            document.getElementById("error").innerHTML = "Q4: " + e4;
+            return;
+        }
+
+        let v5 = document.getElementById("q5").value;
+        let e5 = validate(v5);
+        if (e5 != "") {
+            document.getElementById("error").innerHTML = "Q5: " + e5;
+            return;
+        }
+
+        let d1 = Math.abs(v1 - desired1);
+        let d2 = Math.abs(v2 - desired2);
+        let d3 = Math.abs(v3 - desired3);
+        let d4 = Math.abs(v4 - desired4);
+        let d5 = Math.abs(v5 - desired5);
+
+        let total = d1 + d2 + d3 + d4 + d5;
+
+        let score = 100 - (total * 5);
+
+        let text = "";
+        text += "Q1 diff: " + d1 + "<br>";
+        text += "Q2 diff: " + d2 + "<br>";
+        text += "Q3 diff: " + d3 + "<br>";
+        text += "Q4 diff: " + d4 + "<br>";
+        text += "Q5 diff: " + d5 + "<br><br>";
+
+        text += "Score: " + score + "%<br>";
+
+        if (score >= 80) {
+            text += "True love";
+        } else if (score >= 50) {
+            text += "Maybe friends";
+        } else {
+            text += "Run away";
+        }
+
+        document.getElementById("result").innerHTML = text;
+    }
+</script>
+
+</body>
+</html>
