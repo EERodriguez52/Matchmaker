@@ -2,28 +2,50 @@
 <html>
 <head>
     <title>Matchmaker</title>
+
 <style> 
-body{ font--family: Arial; Font Size: 30px; background-color: lightblue; }
+body {
+    font-family: Arial;
+    font-size: 16px;
+    background-color: lightblue;
+}
 
-h2{ font-family: Times; Font-size: 25px; }
+/* main box */
+.container {
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    padding: 15px;
+    border: 2px solid black;
+}
 
-container {
-        background-color: white;
-        width: 400px;
-        margin: auto;
-        padding: 15px;
-        border: 2px solid black;
-    }
+/* title */
+h2 {
+    font-family: Times;
+    font-size: 25px;
+    text-align: center;
+}
 
+/* spacing */
+input {
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#result {
+    margin-top: 15px;
+}
 </style>
-
-
-
 
 </head>
 
 <body>
-<div class="container"></div>
+
+<div class="container">
 
 <h2>Matchmaker</h2>
 
@@ -48,6 +70,8 @@ container {
 
 <p id="error" style="color:red;"></p>
 <p id="result"></p>
+
+</div>
 
 <script>
     const desired1 = 5;
